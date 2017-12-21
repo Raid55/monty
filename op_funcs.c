@@ -42,8 +42,9 @@ void _swap(stack_t **stack, unsigned int line_number)
 	(void) stack;
 	(void) line_number;
 	
-	if (!instance->stack && !instance->stack->next)
+	if (!instance->stack || !instance->stack->next)
 		_err(NE_NODE_SWAP, NULL);
+
 	temp = instance->stack->next;
 
 	instance->stack->next = temp->next;
