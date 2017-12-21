@@ -7,7 +7,7 @@ stack_t *alloc_node(void)
 	new = malloc(sizeof(stack_t));
 
 	if (!new)
-		return (NULL);
+		_err(MALLOC_ERR, NULL);
 
 	return (new);
 }

@@ -59,6 +59,7 @@ int check_for_op(char *opcode);
 int int_check(char *data_n);
 stack_t *alloc_node(void);
 void free_node(void);
+void _err(int, char *);
 /* void free_stack(void); */
 
 //cheker for func stuff
@@ -69,8 +70,9 @@ void free_node(void);
 //err codes
 #define NO_ARGS 1
 #define NO_FILE 2
-#define INVAL_LINE 3
-#define MALLOC_ERR 4
+#define NO_DATA 3
+#define INVAL_LINE 4
+#define MALLOC_ERR 5
 
 
 #endif

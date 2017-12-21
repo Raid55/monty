@@ -14,19 +14,11 @@ int main(int ac, char **av)
 	instance = &tmp;
 
 	if (ac != 2)
-	{
-		printf("USAGE is lik tis");
-		exit(EXIT_FAILURE);
-		/* _err(NO_ARG); */
-	}
+		_err(NO_ARGS, NULL);
 
 	monty_file = fopen(av[1], "r");
 	if (!monty_file)
-	{
-		printf("NU files");
-		exit(EXIT_FAILURE);
-		/* _err(NO_FILE); */
-	}
+		_err(NO_FILE, av[1]);
 
 	while (getline(&line, &line_len, monty_file) != -1)
 	{
@@ -41,21 +33,14 @@ int main(int ac, char **av)
 		else
 			err = check_for_op(op);
 		if (err == NULL_FUNC)
-		{
-			printf("inval line");
-			exit(EXIT_FAILURE);
-			/* _err(INVAL_LINE); */
-		}
+			_err(INVAL_LINE, op);
 
 		if (err == NEED_ARGS)
 		{
 			if (int_check(data_n))
 				instance->data = atoi(data_n);
 			else
-			{
-				printf("invalidante lines");
-				exit(EXIT_FAILURE);
-			}
+				_err(NO_DATA, NULL);
 		}
 		if (err != SKIP_LINE)
 			run_op_func(op);
