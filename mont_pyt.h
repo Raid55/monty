@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -16,9 +16,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -31,11 +31,46 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct glob_var
+{
+	int data;
+	stack_t *stack;
+	unsigned int line_number;
+} glob_t;
 
+
+extern glob_t *instance;
+
+
+//function prototypes
+void _add(stack_t **stack, unsigned int line_number);
+void _push(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void run_op_func(char *op_str);
+int check_for_op(char *opcode);
+int int_check(char *data_n);
+stack_t *alloc_node(void);
+void free_node(void);
+/* void free_stack(void); */
+
+//cheker for func stuff
+#define NEED_ARGS 2
+#define NO_ARGS 1
+#define NULL_FUNC 0
+#define SKIP_LINE 3
+//err codes
+#define NO_ARGS 1
+#define NO_FILE 2
+#define INVAL_LINE 3
+#define MALLOC_ERR 4
 
 
 #endif
