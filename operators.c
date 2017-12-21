@@ -8,10 +8,16 @@ void run_op_func(char *op_str)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
+		{"pchar", _pchar},
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
+		{"mod", _mod},
 		{"nop", _nop},
+		{"#", _nop},
 		{NULL, NULL}
 	};
 
@@ -31,10 +37,16 @@ int check_for_op(char *opcode)
 		{"push", NULL},
 		{"pall", NULL},
 		{"pint", NULL},
+		{"pchar", NULL},
 		{"pop", NULL},
 		{"swap", NULL},
 		{"add", NULL},
+		{"sub", NULL},
+		{"div", NULL},
+		{"mul", NULL},
+		{"mod", NULL},
 		{"nop", NULL},
+		{"#", NULL},
 		{NULL, NULL}
 	};
 

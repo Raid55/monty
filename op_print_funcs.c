@@ -21,3 +21,15 @@ void _pint(stack_t **stack, unsigned int line_number)
 
 	printf("%d\n", instance->stack->n);
 }
+
+void _pchar(stack_t **stack, unsigned int line_number)
+{
+	(void) stack;
+	(void) line_number;
+
+	if (!instance->stack)
+		_err(NO_STACK_PCHAR, NULL);
+	
+	putchar(instance->stack->n);
+	putchar('\n');
+}

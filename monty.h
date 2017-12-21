@@ -49,13 +49,18 @@ typedef struct glob_var
 extern glob_t *instance;
 
 /*function prototypes*/
-void _add(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
+void _pchar(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _sub(stack_t **stack, unsigned int line_number);
+void _mul(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void _mod(stack_t **stack, unsigned int line_number);
 void run_op_func(char *op_str);
 int check_for_op(char *opcode);
 int int_check(char *data_n);
@@ -70,15 +75,24 @@ void _err(int, char *);
 #define NULL_FUNC 0
 #define SKIP_LINE 3
 /*err codes*/
-#define NO_ARGS       1
-#define NO_FILE       2
-#define NO_DATA       3
-#define NO_STACK_PINT 4
-#define NO_STACK_POP  5
-#define NE_NODE_SWAP  6
-#define NE_NODE_ADD   7
-#define INVAL_LINE    8
-#define MALLOC_ERR    9
+#define NO_ARGS        1
+#define NO_FILE        2
+#define NO_DATA        3
+#define NO_STACK_PINT  4
+#define NO_STACK_POP   5
+#define NO_STACK_PCHAR 6
+#define NE_NODE_SWAP   7
+#define NE_NODE_ADD    8
+#define NE_NODE_SUB    9
+#define NE_NODE_MUL    10
+#define NE_NODE_DIV    11
+#define NE_NODE_MOD    12
+#define NE_NODE_PCHAR  13
+#define ZERO_DATA_MOD  14
+#define ZERO_DATA_DIV  15
+#define CHAR_OUT_RANGE 16
+#define INVAL_LINE     17
+#define MALLOC_ERR     18
 
 
 #endif
