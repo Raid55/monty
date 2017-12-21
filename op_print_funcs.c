@@ -29,6 +29,9 @@ void _pchar(stack_t **stack, unsigned int line_number)
 
 	if (!instance->stack)
 		_err(NO_STACK_PCHAR, NULL);
+
+	if (instance->stack->n <= 127 && instance->stack->n >= 0)
+		_err(CHAR_OUT_RANGE, NULL);
 	
 	putchar(instance->stack->n);
 	putchar('\n');
