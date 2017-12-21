@@ -55,14 +55,5 @@ void _nop(stack_t **stack, unsigned int line_number)
 {
 	(void) stack;
 	(void) line_number;
-	//do a barel roll
-	int a = 1;
-	int b = 2;
-	int c = 0;
-	int d = 0;
-	
-	if (a == b + 1)
-		b = 3;
-	c = 3;
-	d += c + b + 1;
+	/*do a barel roll*/
 }

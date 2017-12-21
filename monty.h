@@ -46,7 +46,7 @@ typedef struct glob_var
 extern glob_t *instance;
 
 
-//function prototypes
+/*function prototypes*/
 void _add(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
@@ -62,12 +62,12 @@ void free_node(void);
 void _err(int, char *);
 /* void free_stack(void); */
 
-//cheker for func stuff
+/*cheker for func stuff*/
 #define NEED_ARGS 2
 #define NO_ARGS 1
 #define NULL_FUNC 0
 #define SKIP_LINE 3
-//err codes
+/*err codes*/
 #define NO_ARGS 1
 #define NO_FILE 2
 #define NO_DATA 3
