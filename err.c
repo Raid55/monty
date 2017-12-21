@@ -22,7 +22,7 @@ void _err(int errcode, char *info)
 			printf("L%d: can't pop an empty stack\n", instance->line_number);
 			break;
 		case NE_NODE_SWAP:
-			printf("L%d: can't pop an empty stack\n", instance->line_number);
+			printf("L%d: can't swap, stack too short\n", instance->line_number);
 			break;
 		case NE_NODE_ADD:
 			printf("L%d: can't add, stack too short\n", instance->line_number);
