@@ -1,4 +1,4 @@
-#include "mont_pyt.h"
+#include "monty.h"
 
 glob_t *instance;
 

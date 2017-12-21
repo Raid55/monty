@@ -1,4 +1,4 @@
-#include "mont_pyt.h"
+#include "monty.h"
 
 stack_t *alloc_node(void)
 {

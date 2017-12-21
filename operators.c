@@ -1,4 +1,4 @@
-#include "mont_pyt.h"
+#include "monty.h"
 
 void run_op_func(char *op_str)
 {
