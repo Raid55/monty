@@ -56,15 +56,14 @@ int int_check(char *data_n)
 {
 	int i = 0;
 
+	if (!data_n)
+		return (0);
 	while (data_n[i])
 	{
-		if ((data_n[i] >= '0' && data_n[i] <= '9') || data_n[i] == '\n' )
-			i++;
+		if (isdigit(data_n[i]) == 0 &&  data_n[i] != '-')
+			return (0);
 		else
-			return(0);
+			i++;
 	}
-	if (data_n)
-		return (1);
-	else
-		return (0);
+	return (1);
 }

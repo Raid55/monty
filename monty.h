@@ -4,7 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <ctype.h>
+#include <fcntl.h>
+#include <unistd.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -38,13 +40,13 @@ typedef struct instruction_s
 typedef struct glob_var
 {
 	int data;
+	FILE *monty_file;
+	char *line;
 	stack_t *stack;
 	unsigned int line_number;
 } glob_t;
 
-
 extern glob_t *instance;
-
 
 /*function prototypes*/
 void _add(stack_t **stack, unsigned int line_number);
