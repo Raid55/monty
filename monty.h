@@ -70,11 +70,15 @@ void _err(int, char *);
 #define NULL_FUNC 0
 #define SKIP_LINE 3
 /*err codes*/
-#define NO_ARGS 1
-#define NO_FILE 2
-#define NO_DATA 3
-#define INVAL_LINE 4
-#define MALLOC_ERR 5
+#define NO_ARGS       1
+#define NO_FILE       2
+#define NO_DATA       3
+#define NO_STACK_PINT 4
+#define NO_STACK_POP  5
+#define NE_NODE_SWAP  6
+#define NE_NODE_ADD   7
+#define INVAL_LINE    8
+#define MALLOC_ERR    9
 
 
 #endif

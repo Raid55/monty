@@ -15,6 +15,18 @@ void _err(int errcode, char *info)
 		case NO_DATA:
 			printf("L%d: usage: push integer\n", instance->line_number);
 			break;
+		case NO_STACK_PINT:
+			printf("L%d: can't pint, stack empty\n", instance->line_number);
+			break;
+		case NO_STACK_POP:
+			printf("L%d: can't pop an empty stack\n", instance->line_number);
+			break;
+		case NE_NODE_SWAP:
+			printf("L%d: can't pop an empty stack\n", instance->line_number);
+			break;
+		case NE_NODE_ADD:
+			printf("L%d: can't add, stack too short\n", instance->line_number);
+			break;
 		case INVAL_LINE:
 			printf("L%d: unknown instruction %s\n", instance->line_number, info);
 			break;
