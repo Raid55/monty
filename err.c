@@ -58,11 +58,11 @@ void _err(int errcode, char *info)
 		default:
 			printf("U WUT M8???\n");
 	}
-	/* if (instance->monty_file) */
-		/* fclose(instance->monty_file); */
-	/* if (instance->line) */
-		/* free(instance->line); */
-	/* while (instance->stack) */	
-		/* free_node(); */
+	if (instance->monty_file)
+		fclose(instance->monty_file);
+	if (instance->line)
+		free(instance->line);
+	while (instance->stack)	
+		free_node();
 	exit(EXIT_FAILURE);
 }
